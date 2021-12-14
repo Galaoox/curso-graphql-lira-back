@@ -1,0 +1,16 @@
+type Query {
+    hello: String! # el signo ! indica que el campo no puede ser null
+    getCharacters: [Character]
+}
+
+type Character {
+    id: ID
+    name: String
+    race: Race
+}
+
+enum Race {
+    HYLIAN
+    GERUDO
+    FAIRY
+}

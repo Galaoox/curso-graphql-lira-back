@@ -6,6 +6,20 @@ const resolvers: IResolvers = {
         hello() {
             return "Hello World";
         },
+        getCharacters() {
+            return [
+                {
+                    id: 1,
+                    name: "Link",
+                    race: "Hylian",
+                },
+                {
+                    id: 2,
+                    name: "Zelda",
+                    race: "Hylian",
+                },
+            ];
+        },
     },
 };
 
