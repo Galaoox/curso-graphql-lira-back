@@ -15,6 +15,7 @@ const character: IResolvers = {
     },
     Mutation: {
         createCharacter(root: void, args: any) {
+            args.character._id = String(data.characters.length + 1);
             data.characters.push(args.character);
             return "Character created";
         },
