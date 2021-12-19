@@ -11,6 +11,7 @@
         "removeComments": true,
         "strict": true,
         "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
     }
 }
