@@ -4,7 +4,7 @@ type Query {
 }
 # las mutations sirven para alterar, almacenar, crear, etc.
 type Mutation {
-    createCharacter(character: NewCharacterInput): String
+    createCharacter(character: NewCharacterInput!): String!
 }
 
 type Character {
