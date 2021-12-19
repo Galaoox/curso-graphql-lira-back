@@ -2,6 +2,10 @@ type Query {
     getCharacters: [Character]
     getCharacter(_id: ID!): Character
 }
+# las mutations sirven para alterar, almacenar, crear, etc.
+type Mutation {
+    createCharacter(character: NewCharacterInput): String
+}
 
 type Character {
     _id: ID
@@ -20,4 +24,11 @@ enum Race {
 enum Gender {
     MALE
     FEMALE
+}
+# con el input se puede definir el tipo de entrada de una mutation
+input NewCharacterInput {
+    name: String!
+    race: Race!
+    gender: Gender!
+    games: [String!]!
 }

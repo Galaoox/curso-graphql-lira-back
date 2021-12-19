@@ -7,11 +7,6 @@ const game: IResolvers = {
             return "Hello World";
         },
     },
-    Character: {
-        games(root: any, args: any, context: any, options: any) {
-            return data.games.filter((games) => root.games.includes(games._id));
-        },
-    },
 };
 
 export default game;

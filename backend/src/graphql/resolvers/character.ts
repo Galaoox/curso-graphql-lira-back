@@ -13,6 +13,17 @@ const character: IResolvers = {
             );
         },
     },
+    Mutation: {
+        createCharacter(root: void, args: any) {
+            data.characters.push(args.character);
+            return "Character created";
+        },
+    },
+    Character: {
+        games(root: any, args: any, context: any, options: any) {
+            return data.games.filter((games) => root.games.includes(games._id));
+        },
+    },
 };
 
 export default character;
