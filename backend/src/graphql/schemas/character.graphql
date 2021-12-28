@@ -5,6 +5,7 @@ type Query {
 # las mutations sirven para alterar, almacenar, crear, etc.
 type Mutation {
     createCharacter(character: NewCharacterInput!): String!
+    updateCharacter(_id: ID!, character: UpdateCharacterInput!): String!
 }
 
 type Character {
@@ -13,6 +14,7 @@ type Character {
     race: Race
     gender: Gender
     games: [Game]
+    image: String
 }
 
 enum Race {
@@ -31,4 +33,13 @@ input NewCharacterInput {
     race: Race!
     gender: Gender!
     games: [String!]!
+    image: String!
+}
+
+input UpdateCharacterInput {
+    name: String
+    race: Race
+    gender: Gender
+    games: [String!]
+    image: String
 }

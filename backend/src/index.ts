@@ -3,6 +3,8 @@ import cors from "cors";
 import { ApolloServer } from "apollo-server-express";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import { schema } from "./graphql/index";
+import MongoLib from "./mongo";
+import config from "./config";
 
 const app = express();
 app.use(cors());
@@ -12,6 +14,7 @@ async function startServer() {
         schema,
         introspection: true,
         plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+        context: async () => new MongoLib().connect(),
     });
     await server.start();
     server.applyMiddleware({ app });
@@ -19,6 +22,6 @@ async function startServer() {
 
 startServer();
 
-app.listen(5000, () => {
-    console.log("Server running in: http://localhost:5000");
+app.listen(config.port, () => {
+    console.log("Server running in: http://localhost:" + config.port);
 });
