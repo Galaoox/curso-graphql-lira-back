@@ -29,5 +29,23 @@
             "_id": "2",
             "title": "Majora's Mask"
         }
+    ],
+    "people": [
+        {
+            "_id": "1",
+            "name": "Link",
+            "address": "123 Main St",
+            "age" : 25
+        },
+        {
+            "_id": "2",
+            "name": "Zelda",
+            "address": "123 Main St 2"
+        },
+        {
+            "_id": "3",
+            "name": "Zelda 2",
+            "address": "123 Main St 23"
+        }
     ]
 }
