@@ -35,17 +35,51 @@
             "_id": "1",
             "name": "Link",
             "address": "123 Main St",
-            "age" : 25
+            "age" : 25,
+            "countries": ["1", "4"]
         },
         {
             "_id": "2",
             "name": "Zelda",
-            "address": "123 Main St 2"
+            "address": "123 Main St 2",
+            "countries": ["3", "1"]
         },
         {
             "_id": "3",
             "name": "Zelda 2",
-            "address": "123 Main St 23"
+            "address": "123 Main St 23",
+            "countries": ["2"]
         }
-    ]
+    ],
+    "countries": [
+            {
+                "_id": "1",
+                "name": "USA",
+                "people" : [
+                    "1",
+                    "2"
+                ]
+            },
+            {
+                "_id": "2",
+                "name": "UK",
+                "people" : [
+                    "3"
+                ]
+            },
+            {
+                "_id": "3",
+                "name": "France",
+                "people": [
+                    "2"
+                ]
+            },
+            {
+                "_id": "4",
+                "name": "Germany",
+                "people": [
+                    "1"
+                ]
+            }
+        ]
 }

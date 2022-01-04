@@ -13,4 +13,26 @@ export const personResolver: IResolvers = {
             return obj.age ? "Male" : "Female";
         },
     },
+    Male: {
+        countries(parent: any) {
+            console.log(parent);
+            return data.countries.filter((country) =>
+                parent.countries.includes(country._id)
+            );
+        },
+    },
+    Female: {
+        countries(parent: any) {
+            return data.countries.filter((country) =>
+                parent.countries.includes(country._id)
+            );
+        },
+    },
+    Country: {
+        people(parent: any) {
+            return data.people.filter((person) =>
+                parent.people.includes(person._id)
+            );
+        },
+    },
 };

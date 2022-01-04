@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { ApolloServer } from "apollo-server-express";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
+import depthLimit from "graphql-depth-limit";
 import { schema } from "./graphql/index";
 import MongoLib from "./mongo";
 import config from "./config";
@@ -15,6 +16,7 @@ async function startServer() {
         introspection: true,
         plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
         context: async () => new MongoLib().connect(),
+        validationRules: [depthLimit(2)],
     });
     await server.start();
     server.applyMiddleware({ app });
