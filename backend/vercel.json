@@ -2,11 +2,11 @@
     "version": 2,
     "builds": [
         {
-            "src": "dist/indes.js",
+            "src": "dist/index.js",
             "use": "@vercel/node",
             "config": {
                 "includeFiles":[
-                    "dist/schemas/**/*.graphql"
+                    "/dist/schemas/**/*.graphql"
                 ]
             }
         }

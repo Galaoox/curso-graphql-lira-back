@@ -19,7 +19,7 @@ async function startServer() {
         validationRules: [depthLimit(2)],
     });
     await server.start();
-    server.applyMiddleware({ app });
+    server.applyMiddleware({ app, path: "/graphql" });
 }
 
 startServer();
